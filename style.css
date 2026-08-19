@@ -1,0 +1,289 @@
+/* RESET E REGRAS GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #070707;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* FUNDO COM TEXTURA */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('assets/pattern.png');
+    opacity: .05;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* HERO HEADER */
+header {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            rgba(8, 8, 8, .85),
+            rgba(8, 8, 8, .95)
+        ),
+        url('assets/hero-bg.png') center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 8% 80px;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 25px;
+    left: 8%;
+    z-index: 10;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+/* LADO ESQUERDO */
+.left {
+    flex: 1;
+    max-width: 600px;
+}
+
+.badge {
+    display: inline-block;
+    background: #6d28d9;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.left h1 {
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.left p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d6d6d6;
+    margin-bottom: 24px;
+}
+
+/* PREÇO */
+.preco small {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.preco h2 {
+    font-size: 54px;
+    color: #00ff88;
+    margin-top: 4px;
+    margin-bottom: 24px;
+}
+
+/* BOTÃO DE COMPRA */
+.botao {
+    display: inline-block;
+    text-decoration: none;
+    background: #00ff88;
+    color: #000;
+    padding: 16px 48px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.botao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+}
+
+.infos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+/* LADO DIREITO (EBOOK) */
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img {
+    width: 380px;
+    max-width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 45px rgba(124, 58, 237, 0.45));
+    transition: transform 0.35s ease;
+}
+
+.right img:hover {
+    transform: scale(1.03) rotate(-1.5deg);
+}
+
+/* CARDS */
+.cards {
+    max-width: 1200px;
+    margin: 60px auto 80px;
+    padding: 0 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #00ff88;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* RESPONSIVIDADE - TABLETS */
+@media (max-width: 1000px) {
+    header {
+        padding: 100px 6% 60px;
+    }
+
+    .logo {
+        position: static;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .logo img {
+        margin: 0 auto;
+        width: 100px;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .left {
+        max-width: 100%;
+    }
+
+    .left h1 {
+        font-size: 38px;
+    }
+
+    .preco h2 {
+        font-size: 46px;
+    }
+
+    .infos {
+        justify-content: center;
+    }
+
+    .right img {
+        width: 280px;
+    }
+}
+
+/* RESPONSIVIDADE - CELULARES */
+@media (max-width: 600px) {
+    header {
+        padding: 80px 20px 40px;
+    }
+
+    .left h1 {
+        font-size: 28px;
+    }
+
+    .left p {
+        font-size: 15px;
+    }
+
+    .preco h2 {
+        font-size: 38px;
+    }
+
+    .botao {
+        width: 100%;
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    .infos {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .right img {
+        width: 220px;
+    }
+
+    .cards {
+        padding: 0 20px;
+        margin-top: 40px;
+    }
+}
